@@ -1,0 +1,24 @@
+package inorder;
+
+public class InOrder {
+	public boolean inOrder(int a, int b, int c, boolean bOk) {
+		boolean tf;
+		  if(b > a && c > b) {
+			  tf = true;
+		  }
+		  else {
+			  tf = false;
+		  }
+		  
+		  if(bOk == true) {
+			  if(c > b) {
+				  tf = true;
+			  }
+			  else {
+				  tf = false;
+			  }
+		  }
+		  
+	}
+
+}

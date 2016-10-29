@@ -1,0 +1,9 @@
+package old35;
+
+public class Old35Runner {
+	public static void main(String[] args) {
+		Old35 test = new Old35();
+		
+		
+	}
+}

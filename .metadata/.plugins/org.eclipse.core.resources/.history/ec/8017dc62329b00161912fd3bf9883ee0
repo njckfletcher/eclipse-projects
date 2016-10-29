@@ -1,0 +1,31 @@
+package extrafront;
+
+public class ExtraFront {
+	public String extraFront(String str) {
+		String firstTwoChars;
+		  
+		if(str.length() > 1) {
+		  firstTwoChars = str.substring(0, 2);
+		}
+		else {
+		  firstTwoChars = str.substring(0);
+		}
+		
+		return firstTwoChars + firstTwoChars + firstTwoChars;
+	}
+	
+	public String extraBack(String str) {
+		String lastTwoChars;
+		  
+		if(str.length() > 1) {
+			int 
+			lastTwoChars = str.substring(0, 2);
+		}
+		else {
+			lastTwoChars = str.substring(0);
+		}
+		
+		return lastTwoChars + lastTwoChars + lastTwoChars;
+	}
+
+}

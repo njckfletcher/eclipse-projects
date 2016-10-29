@@ -1,0 +1,22 @@
+package game;
+
+import java.util.Scanner;
+
+public class Game {
+	public static void main(String[] args) {
+		// System objects
+		Scanner input = new Scanner(System.in);
+		
+		boolean running = true;
+		
+		while(running) {
+			Player hero = new Player();
+			System.out.println("Enter your name:");
+			hero.getName(input.nextLine());
+			
+			System.out.println("------------------------------------------");
+			
+			
+		}
+	}
+}

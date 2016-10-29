@@ -1,0 +1,9 @@
+package seecolor;
+
+public class SeeColorRunner {
+	public static void main(String[] args) {
+		SeeColor test = new SeeColor();
+		String var =test.seeColor("xxred");
+		System.out.println(var);
+	}
+}

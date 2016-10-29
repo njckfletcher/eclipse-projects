@@ -1,0 +1,38 @@
+import java.lang.*;
+
+ 
+
+public class MathTester
+
+	{
+
+	public static void main (String [ ] args)
+
+	{
+
+		System.out.println(Math.abs(-3));
+
+		System.out.println(Math.ceil(9.1));
+		
+		System.out.println(Math.floor(5.511));
+		
+		System.out.println(Math.max(18 - 5 + Math.random(), Math.ceil(4.6 * 3)));
+		
+		System.out.println(Math.abs(-2));
+
+		System.out.println(Math.pow(2, 3));
+
+		System.out.println(Math.round(3.59));
+
+		System.out.println(Math.sqrt(529));
+
+		System.out.println(Math.abs(-3));
+		
+		String str = "Hello World";
+		str.substring(9);
+		System.out.println(part);
+
+	}
+
+}
+

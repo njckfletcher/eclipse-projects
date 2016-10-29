@@ -1,0 +1,30 @@
+package seecolor;
+
+public class SeeColor {
+	public String seeColor(String str) {
+		String text = str;
+		
+		if(text.length() > 2) {
+			String firstThree;
+			String firstFour;
+			
+			firstThree = text.substring(0, 3);
+			
+			if(text.length() >= 4) {
+				firstFour = text.substring(0, 4);
+				if(firstFour.contains("blue")) {
+					text = "blue";
+				}
+			}
+			
+			if(firstThree.contains("red")) {
+				text = "red";
+			}
+		}
+		if(text != "red" && text != "blue") {
+			text = "";
+		}
+		return text;
+	}
+
+}

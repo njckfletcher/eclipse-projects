@@ -1,0 +1,8 @@
+package withoutx2;
+
+public class WithoutX2Runner {
+	public static void main(String[] args) {
+		WithoutX2 test = new WithoutX2();
+		test.withoutX2("Hey");
+	}
+}

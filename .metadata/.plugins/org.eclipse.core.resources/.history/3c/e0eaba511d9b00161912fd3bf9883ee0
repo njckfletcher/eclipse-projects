@@ -1,0 +1,23 @@
+package testers;
+
+public class EndsLy {
+	
+	public EndsLy() {
+		
+	}
+	
+	public boolean endsLy(String str) {
+		  
+		  int indexLastTwo = str.length() - 2;
+		  
+		  String lastTwoChars = str.substring(indexLastTwo, str.length());
+		  
+		  if(lastTwoChars.contains("ly")) {
+		    return true;
+		  }
+		  else {
+		    return false;
+		  }
+		}
+
+}

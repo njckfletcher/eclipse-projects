@@ -1,0 +1,22 @@
+package extrafront;
+
+public class ExtraFrontRunner {
+	public static void main(String[] args) {
+		ExtraFront test = new ExtraFront();
+		String var;
+		
+		var = test.extraFront("Hello");
+		System.out.println(var);
+		
+		var = test.extraFront("o");
+		System.out.println(var);
+		
+		//----------------------------------
+		
+		var = test.extraEnd("Hello");
+		System.out.println(var);
+		
+		var = test.extraEnd("ab");
+		System.out.println(var);
+	}
+}

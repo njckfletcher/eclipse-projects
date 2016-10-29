@@ -1,0 +1,72 @@
+package rectangle;
+
+import java.util.Scanner;
+
+public class RectangleRunner {
+	public static void main(String[] args) {
+		
+		System.out.println("Welcome to Hunter's Rectangle Program!");
+		System.out.println("--------------------------------------");
+		System.out.println();
+		
+		Scanner input = new Scanner(System.in);
+		
+		boolean running = true;
+		
+		APPLICATION:
+		while(running) {
+			System.out.println("The dimensions of the rectangle are required.");
+			
+			System.out.println("Please enter the length of the rectangle:");
+			double L = input.nextDouble();
+			System.out.println();
+
+			System.out.println("Please enter the width of the rectangle:");
+			double W = input.nextDouble();
+			System.out.println();
+
+			Rectangle rect01 = new Rectangle();
+			rect01.setLength(L);
+			rect01.setWidth(W);
+			
+			boolean action = true;
+			
+			while(action) {
+				System.out.println("What would you like to know about your rectangle?");
+				System.out.println("\t1) Area");
+				System.out.println("\t2) Perimeter");
+				System.out.println("\t3) Creating new rectangle");
+				System.out.println("\t4) Exit");
+				
+				System.out.print(">");
+				String decision = input.nextLine();
+				
+				System.out.println();
+
+				if(decision.equals("1")) {
+					double RectangleArea;
+					RectangleArea = rect01.getArea();
+					System.out.println("The rectangle's area is " + RectangleArea + ".\n");
+				}
+				else if(decision.equals("2")) {
+					double RectanglePerimeter;
+					RectanglePerimeter = rect01.getPerimeter();
+					System.out.println("The rectangle's perimeter is " + RectanglePerimeter + ".\n");
+				}
+				
+				else if(decision.equals("3")) {
+					break;
+				}
+				else if(decision.equals("4")) {
+					break APPLICATION;
+				}
+				else {
+					System.out.println("Invalid command!\n");
+					continue;
+				}
+			}
+				
+		}
+		
+	}
+}

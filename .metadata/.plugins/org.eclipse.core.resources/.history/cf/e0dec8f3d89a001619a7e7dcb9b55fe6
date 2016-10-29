@@ -1,0 +1,28 @@
+package rectangle;
+
+import java.util.Scanner;
+
+public class RectangleRunner {
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		
+		System.out.println("Please enter the length of the rectangle:");
+		double L = input.nextDouble();
+		
+		System.out.println("Please enter the width of the rectangle:");
+		double W = input.nextDouble();
+		
+		double RectangleArea;
+		double RectanglePerimeter;
+		
+		Rectangle rect01 = new Rectangle();
+		rect01.setLength(L);
+		rect01.setWidth(W);
+		
+		RectangleArea = rect01.getArea();
+		System.out.println("The rectangle's area is " + RectangleArea + ".");
+		
+		RectanglePerimeter = rect01.getPerimeter();
+		System.out.println("The rectangle's perimeter is " + RectanglePerimeter + ".");
+	}
+}

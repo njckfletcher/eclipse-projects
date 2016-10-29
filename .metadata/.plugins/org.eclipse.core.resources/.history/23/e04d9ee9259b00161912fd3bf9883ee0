@@ -1,0 +1,27 @@
+package withoutx2;
+
+public class WithoutX2 {
+	public String withoutX2(String str) {
+		String text = str;
+		String firstChar;
+		String secondChar;
+		
+		firstChar = str.substring(0);
+		secondChar = str.substring(1);
+		
+		if(firstChar.contains("x")) {
+			int point = str.indexOf(firstChar);
+			text = str.substring(point + firstChar.length(), text.length());
+		}
+		else if (secondChar.contains("x")) {
+			int point = str.indexOf(secondChar);
+			text = str.substring(point + secondChar.length(), text.length());
+		}
+		else {
+			return str;
+		}
+		
+		return text;
+		
+	}
+}

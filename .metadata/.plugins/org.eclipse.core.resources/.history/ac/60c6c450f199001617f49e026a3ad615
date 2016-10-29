@@ -1,0 +1,46 @@
+package lineeditor;
+
+public class MyLine {
+	
+	String lineText;
+	
+	public MyLine(String name) {
+		// System.out.println("Line Created.");
+		lineText = name;
+	}
+	
+	public void insert(String str, int index) {
+		if(-1 < index && index < lineText.length() + 1) {
+			lineText = lineText.substring(0, index) + str + lineText.substring(index);
+		}
+		else {
+			System.out.println("Invalid command!");
+		}
+	}
+	
+	public void delete(String str) {
+		//int amountAfterString = lineText.length() - str.length();
+		//int amountBeforeString = lineText.length() - amountAfterString;
+		//lineText = lineText.substring(amountBeforeString);
+		
+		int amountBeforeString;
+		int amountAfterString;
+		
+		String firstSet;
+		String secondSet;
+		
+		amountBeforeString = lineText.indexOf(0);
+		
+		
+		
+		System.out.println(amountBeforeString);
+		//amountAfterString = 
+		
+		firstSet = lineText.substring(0, amountBeforeString);
+		System.out.println(firstSet);
+				
+	}
+	
+	
+	
+}

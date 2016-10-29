@@ -1,0 +1,23 @@
+package testers;
+
+public class EndsLy {
+	
+	public EndsLy() {
+		
+	}
+	
+	public boolean endsLy(String str) {
+		  
+		  int point = str.length() - 1;
+		  
+		  System.out.println(point);
+		  
+		  if(str.substring(point, str.length()) == "ly") {
+		    return true;
+		  }
+		  else {
+		    return false;
+		  }
+		}
+
+}

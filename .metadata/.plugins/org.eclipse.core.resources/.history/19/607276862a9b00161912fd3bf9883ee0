@@ -1,0 +1,26 @@
+package withoutx2;
+
+public class WithoutX2Runner {
+	public static void main(String[] args) {
+		String trial;
+		WithoutX2 test = new WithoutX2();
+		
+		trial = test.withoutX2("xxHi");
+		System.out.println(trial);
+		
+		trial = test.withoutX2("xHi");
+		System.out.println(trial);
+		
+		//trial = test.withoutX2("Hi");
+		//System.out.println(trial);
+		
+		//trial = test.withoutX2("j");
+		//System.out.println(trial);
+		
+		//trial = test.withoutX2("x");
+		//System.out.println("#" + trial + "#");  // this shows that the single x did in fact disappear
+		
+		trial = test.withoutX2("Hxi");
+		System.out.println(trial);
+	}
+}

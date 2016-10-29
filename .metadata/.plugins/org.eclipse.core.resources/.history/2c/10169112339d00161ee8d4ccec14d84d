@@ -1,0 +1,14 @@
+package game;
+
+import java.util.Scanner;
+
+public class Game {
+	// System objects
+	Scanner input = new Scanner(System.in);
+	
+	boolean running = true;
+	
+	while(running) {
+		
+	}
+}

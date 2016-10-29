@@ -1,0 +1,23 @@
+package practice.endsly;
+
+public class EndsLyRunner {
+	public static void main(String[] args) {
+		boolean var;
+		
+		EndsLy random = new EndsLy();
+		var = random.endsLy("hunterly");
+		System.out.println(var);
+		
+		var = random.endsLy("gracious");
+		System.out.println(var);
+		
+		var = random.endsLy("weatherly");
+		System.out.println(var);
+		
+		var = random.endsLy("onlyone");
+		System.out.println(var);
+		
+		var = random.endsLy("y");
+		System.out.println(var);
+	}
+}

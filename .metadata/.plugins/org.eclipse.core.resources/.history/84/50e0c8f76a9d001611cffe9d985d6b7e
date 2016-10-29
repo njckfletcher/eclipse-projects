@@ -1,0 +1,9 @@
+package game;
+
+public class Player {
+	String name;
+	public void getName(String n) {
+		this.name = n;
+	}
+	int health = 100;
+}

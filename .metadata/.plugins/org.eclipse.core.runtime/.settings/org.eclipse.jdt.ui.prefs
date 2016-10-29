@@ -1,0 +1,20 @@
+content_assist_disabled_computers=org.eclipse.jdt.ui.textProposalCategory\u0000org.eclipse.recommenders.calls.rcp.proposalCategory.templates\u0000org.eclipse.mylyn.java.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaAllProposalCategory\u0000org.eclipse.jdt.ui.javaTypeProposalCategory\u0000org.eclipse.jdt.ui.javaNoTypeProposalCategory\u0000org.eclipse.recommenders.chain.rcp.proposalCategory.chain\u0000
+content_assist_lru_history=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><history maxLHS\="100" maxRHS\="10"><lhs name\="lineeditor.MyLine"><rhs name\="lineeditor.MyLine"/></lhs><lhs name\="rectangle.Rectangle"><rhs name\="rectangle.Rectangle"/></lhs><lhs name\="testers.EndsLy"><rhs name\="testers.EndsLy"/></lhs><lhs name\="extrafront.ExtraFront"><rhs name\="extrafront.ExtraFront"/></lhs><lhs name\="withoutx2.WithoutX2"><rhs name\="withoutx2.WithoutX2"/></lhs><lhs name\="seecolor.SeeColor"><rhs name\="seecolor.SeeColor"/></lhs><lhs name\="combostring.ComboString"><rhs name\="combostring.ComboString"/></lhs><lhs name\="old35.Old35"><rhs name\="old35.Old35"/></lhs><lhs name\="inorderequal.InOrderEqual"><rhs name\="inorderequal.InOrderEqual"/></lhs><lhs name\="game.Player"><rhs name\="game.Player"/></lhs></history>
+content_assist_number_of_computers=19
+content_assist_proposals_background=255,255,255
+content_assist_proposals_foreground=0,0,0
+eclipse.preferences.version=1
+fontPropagated=true
+org.eclipse.jdt.ui.editor.tab.width=
+org.eclipse.jdt.ui.formatterprofiles.version=12
+org.eclipse.jdt.ui.javadoclocations.migrated=true
+org.eclipse.jdt.ui.text.code_templates_migrated=true
+org.eclipse.jdt.ui.text.custom_code_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.custom_templates=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates/>
+org.eclipse.jdt.ui.text.templates_migrated=true
+org.eclipse.jface.textfont=1|Monospace|10.0|0|GTK|1|;
+proposalOrderMigrated=true
+spelling_locale_initialized=true
+tabWidthPropagated=true
+useAnnotationsPrefPage=true
+useQuickDiffPrefPage=true

@@ -1,0 +1,8 @@
+package greenticket;
+
+public class GreenTicketRunner {
+	public static void main(String[] args) {
+		GreenTicket test = new GreenTicket();
+		
+	}
+}

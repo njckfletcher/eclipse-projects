@@ -1,0 +1,11 @@
+package testers;
+
+public class EndsLyRunner {
+	public static void main(String[] args) {
+		boolean var;
+		
+		EndsLy random = new EndsLy();
+		var = random.endsLy("hunterly");
+		// System.out.println(var);
+	}
+}

@@ -1,0 +1,15 @@
+package rectangle;
+
+public class Debugger {
+	public static void main(String[] args) {
+		int W = 5;
+		int L = 6;
+		
+		Rectangle rect01 = new Rectangle();
+		System.out.println(rect01.length);
+		System.out.println(rect01.width);
+		
+		rect01.setLength(L);
+		rect01.setWidth(W);
+	}
+}

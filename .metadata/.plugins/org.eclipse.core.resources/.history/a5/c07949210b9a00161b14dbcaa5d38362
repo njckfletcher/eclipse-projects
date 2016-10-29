@@ -1,0 +1,34 @@
+package lineeditor;
+
+public class LineEditor {
+	
+	public static void main(String[] args) {
+		
+		MyLine myLine01 = new MyLine("Computer Science");
+		myLine01.insert("A.P.", 0);
+		System.out.println(myLine01.lineText);
+		
+		MyLine myLine02 = new MyLine("Computer Science");
+		myLine02.insert(" is best", 16);
+		System.out.println(myLine02.lineText);
+		
+		MyLine myLine03 = new MyLine("Computer Science");
+		myLine03.insert("Java", 4);
+		System.out.println(myLine03.lineText);
+		
+		System.out.println();
+		
+		//MyLine myLine04 = new MyLine("Computer Science");
+		//myLine04.delete("Com");
+		//System.out.println(myLine04.lineText);
+		
+		MyLine myLine05 = new MyLine("Computer Science");
+		myLine05.delete("ter Sc");
+		System.out.println(myLine05.lineText);
+		
+		MyLine myLine06 = new MyLine("Computer Science");
+		myLine06.delete("c");
+		System.out.println(myLine06.lineText);
+	}
+	
+}

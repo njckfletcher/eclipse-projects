@@ -1,0 +1,9 @@
+package extrafront;
+
+public class ExtraFrontRunner {
+	public static void main(String[] args) {
+		ExtraFront test = new ExtraFront();
+		String var;
+		var = test.extraFront("Hello");
+	}
+}

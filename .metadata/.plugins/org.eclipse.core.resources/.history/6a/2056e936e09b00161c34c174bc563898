@@ -1,0 +1,18 @@
+import java.lang.*;
+
+ 
+
+public class MathTester
+
+	{
+
+	public static void main (String [ ] args)
+
+	{
+		int number = 7 - 2 + Math.log10(1000) + Math.log(Math.pow(Math.E, 5));
+		System.out.println(number);
+		
+	}
+
+}
+
