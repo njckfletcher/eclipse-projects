@@ -11,7 +11,7 @@ public class Game {
 		
 		while(running) {
 			// game variables
-			String systemPrompts[] = {"What do you want to do?: ", "Invalid command.  Try \"help\"."};
+			String systemPrompts[] = {"What do you want to do?: ", "Invalid command.  Try 'help'"};
 			String decision;
 			
 			// main character creation
@@ -26,23 +26,46 @@ public class Game {
 				
 				while(hero.location.equals("Chamber")) {
 					System.out.println("------------------------------------------");
-					System.out.println("Your eyes open.  Still shivering from the cold, you look "
-						+ "\naround as the chamber fog begins to disappear.  Red flahing lights "
-						+ "\ncan be seen out the small window in front of you.  You see a button "
-						+ "\nthat says \"Emergency Latch Release\".");
+					System.out.println(chamber.textPrompts[0]);
+					System.out.println("------------------------------------------");
+					System.out.println(">>>TIP: When stuck, try 'help'.");
+						
+					while(chamber.door.open == false) {						
+						System.out.println("------------------------------------------");
+						System.out.print("\n" + systemPrompts[0]);
+						decision = input.nextLine(); 
+						
+						if(decision.equalsIgnoreCase("press button")) {
+							chamber.door.getCondition(true);
+						}
+						else if(decision.equalsIgnoreCase("help")) {
+							System.out.println(">>>Try '" + chamber.commandsAvailable[0] + "'");
+						}
+						else {
+							System.out.println(">>>" + systemPrompts[1]);
+						}
+					}
 					
-					System.out.print("\n" + systemPrompts[0]);
-					decision = input.nextLine(); 
-					
-					if(decision.equalsIgnoreCase("press button")) {
-						chamber.door.getCondition(true);
-					}
-					else if(decision.equalsIgnoreCase("help")) {
-						System.out.println("Try '" + chamber.commandsAvailable[0] + "'");
-					}
-					else {
-						System.out.println(systemPrompts[1]);
-					}
+					while(chamber.door.open == true) {
+						System.out.println("------------------------------------------");
+						System.out.println(chamber.textPrompts[1]);
+						
+						System.out.println("------------------------------------------");
+						System.out.print("\n" + systemPrompts[0]);
+						decision = input.nextLine();
+						
+						if(decision.equalsIgnoreCase("press button")) {
+							System.out.println("The door doesn't close from the inside.");
+						}
+						else if(decision.equalsIgnoreCase("help")) {
+							System.out.println(">>>Try '" + chamber.commandsAvailable[1] + "', '" 
+						+ chamber.commandsAvailable[2] + "', or '" + chamber.commandsAvailable[3] 
+								+ "'");
+						}
+						else {
+							System.out.println(">>>" + systemPrompts[1]);
+						}
+					} 
 				}
 			}
 		}
