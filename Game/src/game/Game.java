@@ -37,7 +37,10 @@ public class Game {
 						System.out.print(systemPrompts[0]);
 						decision = input.nextLine(); 
 						
-						if(decision.equalsIgnoreCase("press button") || decision.equalsIgnoreCase("press the button")) {
+						if(decision.equalsIgnoreCase("press button") 
+						|| decision.equalsIgnoreCase("press the button")
+						|| decision.equalsIgnoreCase("push button") 
+						|| decision.equalsIgnoreCase("push the button")) {
 							chamber.door.getCondition(true);
 						}
 						else if(decision.equalsIgnoreCase(chamber.commandsAvailable[0]) || 
@@ -81,18 +84,24 @@ public class Game {
 						System.out.print(systemPrompts[0]);
 						decision = input.nextLine();
 						
-						if(decision.equalsIgnoreCase("press button")) {
+						if(decision.equalsIgnoreCase("press button")
+						|| decision.equalsIgnoreCase("press the button")
+						|| decision.equalsIgnoreCase("push button")
+						|| decision.equalsIgnoreCase("push the button")) {
+							System.out.println("------------------------------------------");
 							System.out.println("The door doesn't close from the inside.");
 						}
-						/* else if(decision.equalsIgnoreCase("goto dark room")) || 
-						decision.equalsIgnoreCase("goto the dark room")) || 
-						decision.equalsIgnoreCase("leave chamber") || 
-						decision.equalsIgnoreCase("leave the chamber")) || 
-						decision.equalsIgnoreCase("exit chamber")) || 
-						decision.equalsIgnoreCase("exit the chamber")) {
-							System.out.println("------------------------------------------");
-							System.out.println(chamber.textPrompts[3]);
-						} */
+						else if(decision.equalsIgnoreCase("goto dark room") 
+							 || decision.equalsIgnoreCase("goto the dark room") 
+							 || decision.equalsIgnoreCase("exit chamber") 
+							 || decision.equalsIgnoreCase("exit the chamber") 
+							 || decision.equalsIgnoreCase("leave chamber") 
+							 || decision.equalsIgnoreCase("leave the chamber")
+							 || decision.equalsIgnoreCase("goto flashing lights")
+							 || decision.equalsIgnoreCase("goto the flashing lights")) {
+							hero.getLocation("Lab");
+							break CHAMBER;
+						} 
 						else if(decision.equalsIgnoreCase("look around")) {
 							System.out.println("------------------------------------------");
 							System.out.println(chamber.textPrompts[3]);
@@ -101,7 +110,7 @@ public class Game {
 							System.out.println("------------------------------------------");
 							System.out.println(">>>Try '" + chamber.commandsAvailable[2] + "', '" 
 														  + chamber.commandsAvailable[1] + "', '" 
-														  +  chamber.commandsAvailable[3] + "', or '" 
+														  + chamber.commandsAvailable[3] + "', or '" 
 														  + chamber.commandsAvailable[4] + "'");
 						}
 						else {
@@ -109,6 +118,15 @@ public class Game {
 							System.out.println(">>>" + systemPrompts[1]);
 						}
 					} 
+				}
+				
+				Lab lab = new Lab();
+				
+				LAB:
+				while(hero.location.equals("Lab")) {
+					System.out.println("------------------------------------------");
+					System.out.print(systemPrompts[0]);
+					decision = input.nextLine(); 
 				}
 			}
 		}

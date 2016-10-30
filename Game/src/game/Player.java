@@ -1,5 +1,8 @@
 package game;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 	// player variables
 	String name;
@@ -10,7 +13,9 @@ public class Player {
 	
 	int health = 100;
 	
-	Inventory inventory = new Inventory();
+	//Inventory inventory = new Inventory();
+	
+	List<String> inv = new ArrayList<String>();
 	
 	// player location methods
 	String location;
