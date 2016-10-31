@@ -24,6 +24,10 @@ public class Game {
 			Chamber chamber = new Chamber();
 			Lab lab = new Lab();
 			
+			//map items
+			Phone labPhone = new Phone();
+			lab.inv.add("Lab Phone");
+			
 			while(hero.health > 0) {
 
 				CHAMBER:
@@ -33,7 +37,11 @@ public class Game {
 					System.out.println("------------------------------------------");
 					System.out.println(">>>TIP: The following commands are available at any given time:"
 							+ "\n'help'"
-							+ "\n'look around'");  // 'current location', 'current health'
+							+ "\n'look around'"
+							+ "\n'health'"
+							+ "\n'location'"
+							+ "\n'inventory'"
+							+ "\n'inventory weight'");
 						
 					while(chamber.door.open == false) {						
 						System.out.println("------------------------------------------");
@@ -74,6 +82,22 @@ public class Game {
 							System.out.println("------------------------------------------");
 							System.out.println(">>>Try '" + chamber.commandsAvailable[0] + "' or '" 
 														  + chamber.commandsAvailable[1] + "'");
+						}
+						else if(decision.equalsIgnoreCase("inventory")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.inv);
+						}
+						else if(decision.equalsIgnoreCase("inventory weight")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.invWeight);
+						}
+						else if(decision.equalsIgnoreCase("health")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.health);
+						}
+						else if(decision.equalsIgnoreCase("location")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.location);
 						}
 						else {
 							System.out.println("------------------------------------------");
@@ -123,6 +147,22 @@ public class Game {
 														  + chamber.commandsAvailable[3] + "', or '" 
 														  + chamber.commandsAvailable[4] + "'");
 						}
+						else if(decision.equalsIgnoreCase("inventory")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.inv);
+						}
+						else if(decision.equalsIgnoreCase("inventory weight")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.invWeight);
+						}
+						else if(decision.equalsIgnoreCase("health")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.health);
+						}
+						else if(decision.equalsIgnoreCase("location")) {
+							System.out.println("------------------------------------------");
+							System.out.println(hero.location);
+						}
 						else {
 							System.out.println("------------------------------------------");
 							System.out.println(">>>" + systemPrompts[1]);
@@ -136,6 +176,8 @@ public class Game {
 						if(lab.firstVisit) {
 							System.out.println("------------------------------------------");
 							System.out.println(lab.textPrompts[0]);
+							System.out.println("------------------------------------------");
+							System.out.println(">>>This location will now be referred to as the 'lab'");
 							lab.firstVisit = false;
 							lab.openingPromtUsed = true;
 						}
@@ -154,7 +196,35 @@ public class Game {
 					System.out.print(systemPrompts[0]);
 					decision = input.nextLine();
 					
-					if(decision.equalsIgnoreCase("leave lab")) {
+					if(decision.equalsIgnoreCase("take phone")) {
+						if(hero.invWeight + labPhone.weight > 15) {
+							System.out.println("You cannot pick up the phone because your inventory is full!");
+						}
+						else {
+							lab.inv.remove("Lab Phone");
+							hero.inv.add("Lab Phone");
+							hero.invWeight += labPhone.weight;
+							System.out.println("------------------------------------------");
+							System.out.println("You picked up the phone.");
+						}
+					}
+					else if(decision.equalsIgnoreCase("inventory")) {
+						System.out.println("------------------------------------------");
+						System.out.println(hero.inv);
+					}
+					else if(decision.equalsIgnoreCase("inventory weight")) {
+						System.out.println("------------------------------------------");
+						System.out.println(hero.invWeight);
+					}
+					else if(decision.equalsIgnoreCase("health")) {
+						System.out.println("------------------------------------------");
+						System.out.println(hero.health);
+					}
+					else if(decision.equalsIgnoreCase("location")) {
+						System.out.println("------------------------------------------");
+						System.out.println(hero.location);
+					}
+					else if(decision.equalsIgnoreCase("leave lab")) {
 						lab.openingPromtUsed = false;
 						break LAB;
 					}

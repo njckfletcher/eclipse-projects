@@ -6,7 +6,7 @@ public class Phone {
 	boolean lock;
 	boolean screenOn;
 	int password = 4816;
-	int itemWeight = 1;
+	int weight = 1;
 	int battery = 0; // percent
 	Button lockButton = new Button();
 	
