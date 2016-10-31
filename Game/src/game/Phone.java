@@ -11,7 +11,7 @@ public class Phone {
 	Button lockButton = new Button();
 	
 	public Phone() {
-		while(battery == 0) {
+		if(battery == 0) {
 			on = false;
 		}
 		while(battery > 0) {

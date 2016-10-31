@@ -29,8 +29,9 @@ public class Game {
 					System.out.println("------------------------------------------");
 					System.out.println(chamber.textPrompts[0]);
 					System.out.println("------------------------------------------");
-					System.out.println(">>>TIP: When stuck, try 'help'.  Also, you can 'look around' "
-							+ "\nat any given time.");
+					System.out.println(">>>TIP: The following commands are available at any given time:"
+							+ "\n'help'"
+							+ "\n'look around'");  // 'current location', 'current health'
 						
 					while(chamber.door.open == false) {						
 						System.out.println("------------------------------------------");
@@ -47,12 +48,19 @@ public class Game {
 								decision.equalsIgnoreCase(chamber.commandsAvailable[1]) || 
 								decision.equalsIgnoreCase(chamber.commandsAvailable[2]) || 
 								decision.equalsIgnoreCase(chamber.commandsAvailable[3]) || 
-								decision.equalsIgnoreCase(chamber.commandsAvailable[4])) {
+								decision.equalsIgnoreCase(chamber.commandsAvailable[4]) ||
+								decision.equalsIgnoreCase(chamber.commandsAvailable[5])) {
 							System.out.println("------------------------------------------");
 							if(decision.equalsIgnoreCase("look")) {
 								System.out.println("'look' at what?");
 							}
-							else {
+							else if(decision.equalsIgnoreCase(chamber.commandsAvailable[2]) ||
+									decision.equalsIgnoreCase(chamber.commandsAvailable[3]) ||
+									decision.equalsIgnoreCase(chamber.commandsAvailable[4]) ||
+									decision.equalsIgnoreCase(chamber.commandsAvailable[5])) {
+								System.out.println("The door must be opened first.");
+							}
+							else{
 								System.out.println("'" + decision + "' what?");
 							}
 						}
@@ -124,6 +132,19 @@ public class Game {
 				
 				LAB:
 				while(hero.location.equals("Lab")) {
+					if(lab.firstVisit) {
+						System.out.println("------------------------------------------");
+						System.out.println(lab.textPrompts[0]);
+						lab.firstVisit = false;
+					}
+					else {
+						System.out.println("------------------------------------------");
+						if(hero.inv.contains("labPhone")) {
+							System.out.println(lab.textPrompts[1]);
+						} else {
+							System.out.println(lab.textPrompts[2]);
+						}
+					}
 					System.out.println("------------------------------------------");
 					System.out.print(systemPrompts[0]);
 					decision = input.nextLine(); 
