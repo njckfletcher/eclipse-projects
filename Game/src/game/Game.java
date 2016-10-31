@@ -18,12 +18,14 @@ public class Game {
 			Player hero = new Player();
 			System.out.print("Enter your name: ");
 			hero.getName(input.nextLine());
+			hero.getLocation("Chamber"); // assigns player's first location to the Chamber
+			
+			// map locations creation
+			Chamber chamber = new Chamber();
+			Lab lab = new Lab();
 			
 			while(hero.health > 0) {
-				hero.getLocation("Chamber");
-				// first room, chamber, created
-				Chamber chamber = new Chamber();
-				
+
 				CHAMBER:
 				while(hero.location.equals("Chamber")) {
 					System.out.println("------------------------------------------");
@@ -128,26 +130,34 @@ public class Game {
 					} 
 				}
 				
-				Lab lab = new Lab();
-				
 				LAB:
 				while(hero.location.equals("Lab")) {
-					if(lab.firstVisit) {
-						System.out.println("------------------------------------------");
-						System.out.println(lab.textPrompts[0]);
-						lab.firstVisit = false;
-					}
-					else {
-						System.out.println("------------------------------------------");
-						if(hero.inv.contains("labPhone")) {
-							System.out.println(lab.textPrompts[1]);
-						} else {
-							System.out.println(lab.textPrompts[2]);
+					while(lab.openingPromtUsed == false) {
+						if(lab.firstVisit) {
+							System.out.println("------------------------------------------");
+							System.out.println(lab.textPrompts[0]);
+							lab.firstVisit = false;
+							lab.openingPromtUsed = true;
+						}
+						else {
+							System.out.println("------------------------------------------");
+							if(hero.inv.contains("labPhone")) {
+								System.out.println(lab.textPrompts[1]);
+								lab.openingPromtUsed = true;
+							} else {
+								System.out.println(lab.textPrompts[2]);
+								lab.openingPromtUsed = true;
+							}
 						}
 					}
 					System.out.println("------------------------------------------");
 					System.out.print(systemPrompts[0]);
-					decision = input.nextLine(); 
+					decision = input.nextLine();
+					
+					if(decision.equalsIgnoreCase("leave lab")) {
+						lab.openingPromtUsed = false;
+						break LAB;
+					}
 				}
 			}
 		}
