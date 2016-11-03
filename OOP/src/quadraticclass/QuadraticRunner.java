@@ -1,4 +1,4 @@
-
+package quadraticclass;
 
 
 public class QuadraticRunner
