@@ -26,7 +26,7 @@ public class QuadraticRunner
     double solution3b = test3.getSolution2();
     
     
-    System.out.println(equation1);
+    System.out.println("Equation: " + equation1);
     System.out.println("This equation has a solution: " + hasSolution1);
     System.out.println("The first solution is " + solution1);
     System.out.println("The second solution is " + solution1b);
@@ -34,7 +34,7 @@ public class QuadraticRunner
     
     System.out.println();
     
-    System.out.println(equation2);
+    System.out.println("Equation: " + equation2);
     System.out.println("This equation has a solution: " + hasSolution2);
     System.out.println("The first solution is " + solution2);
     System.out.println("The second solution is " + solution2b);
@@ -42,7 +42,7 @@ public class QuadraticRunner
     
     System.out.println();
     
-    System.out.println(equation3);
+    System.out.println("Equation: " + equation3);
     System.out.println("This equation has a solution: " + hasSolution3);
     System.out.println("The first solution is " + solution3);
     System.out.println("The second solution is " + solution3b);
