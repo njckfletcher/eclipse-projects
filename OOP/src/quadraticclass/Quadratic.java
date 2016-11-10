@@ -1,11 +1,11 @@
 package quadraticclass;
 
 public class Quadratic {
-	int baseA;    // the 'a' in equation
-	int baseB;    // the 'b' in equation
-	int baseC;    // the 'c' in equation
+	int baseA;
+	int baseB; 
+	int baseC;
 	String equation;
-	int disc; // b*b - 4*a*c
+	int disc; 
 	
 	public Quadratic(int a, int b, int c) {
 		baseA = a;
