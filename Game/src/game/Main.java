@@ -1,29 +1,21 @@
 package game;
 
-import java.util.Scanner;
-
 public class Main {
 	public static void main(String[] args) {
+		// System Objects
+		Parser parse = new Parser();
+		String command;		
+		
 		// Instantiating Game Objects
-		Chamber chamber = new Chamber();
-		Lab lab = new Lab();
-		Phone labPhone = new Phone();
-		
-		// COMMAND HANDLER:
-		//Scanner input = new Scanner(System.in);
-		//String command = input.next().toLowerCase();
-		//String[] parts = command.split(" ");
-		//if(parts.length == 2 && parts[0].equals("look")) {
-		//	
-		//}
-		
 		Player hero = new Player();
 		
+		// Tests
 		hero.displayInventory();
 		hero.displayInventoryWeight();
 		hero.displayLocation();
 		
 		System.out.println();
+		
 		hero.inv.add("Phone");
 		hero.invWeight += 1;
 		hero.move("Room02");
@@ -32,6 +24,10 @@ public class Main {
 		hero.displayInventoryWeight();
 		hero.displayLocation();
 		
+		System.out.print("Input something: ");
+		command = parse.parseCommand();
 		
+		System.out.println(command);
+		//System.out.println(parse.parts[0]);
 	}
 }
