@@ -24,10 +24,9 @@ public class Main {
 		hero.displayInventoryWeight();
 		hero.displayLocation();
 		
-		System.out.print("Input something: ");
+		System.out.print("Input something random: ");
 		command = parse.parseCommand();
 		
 		System.out.println(command);
-		//System.out.println(parse.parts[0]);
 	}
 }
