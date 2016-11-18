@@ -34,7 +34,7 @@ public class Player {
 	
 	public void move(String whereTo) {
 		switch(whereTo) {
-			case "Room01": location = "Room02";
+			case "Room01": location = "Room01";
 				break;
 				
 			case "Room02": location = "Room02";

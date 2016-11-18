@@ -18,7 +18,7 @@ public class Game2 {
 			Player hero = new Player();
 			System.out.print("Enter your name: ");
 			hero.getName(input.nextLine());
-			hero.getLocation("Chamber"); // assigns player's first location to the Chamber
+			hero.move("Chamber"); // assigns player's first location to the Chamber
 			
 			// map locations creation
 			Chamber chamber = new Chamber();
@@ -136,7 +136,7 @@ public class Game2 {
 							 || decision.equalsIgnoreCase("leave the chamber")
 							 || decision.equalsIgnoreCase("goto flashing lights")
 							 || decision.equalsIgnoreCase("goto the flashing lights")) {
-							hero.getLocation("Lab");
+							hero.move("Lab");
 							break CHAMBER;
 						} 
 						else if(decision.equalsIgnoreCase("look around")) {

@@ -18,7 +18,6 @@ public class Main {
 		//}
 		
 		Player hero = new Player();
-		hero.move("Lab");
 		
 		hero.displayInventory();
 		hero.displayInventoryWeight();
@@ -27,7 +26,7 @@ public class Main {
 		System.out.println();
 		hero.inv.add("Phone");
 		hero.invWeight += 1;
-		hero.move("Chamber");
+		hero.move("Room02");
 		
 		hero.displayInventory();
 		hero.displayInventoryWeight();
