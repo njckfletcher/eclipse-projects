@@ -10,11 +10,29 @@ public class Main {
 		Phone labPhone = new Phone();
 		
 		// COMMAND HANDLER:
-		Scanner input = new Scanner(System.in);
-		String command = input.next().toLowerCase();
-		String[] parts = command.split(" ");
-		if(parts.length == 2 && parts[0].equals("look")) {
-			
-		}
+		//Scanner input = new Scanner(System.in);
+		//String command = input.next().toLowerCase();
+		//String[] parts = command.split(" ");
+		//if(parts.length == 2 && parts[0].equals("look")) {
+		//	
+		//}
+		
+		Player hero = new Player();
+		hero.move("Lab");
+		
+		hero.displayInventory();
+		hero.displayInventoryWeight();
+		hero.displayLocation();
+		
+		System.out.println();
+		hero.inv.add("Phone");
+		hero.invWeight += 1;
+		hero.move("Chamber");
+		
+		hero.displayInventory();
+		hero.displayInventoryWeight();
+		hero.displayLocation();
+		
+		
 	}
 }

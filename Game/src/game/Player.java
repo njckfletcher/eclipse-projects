@@ -18,14 +18,27 @@ public class Player {
 	int invWeight = 0;
 	int invMaxWeight = 15;
 	
+	public void displayInventory() {
+		System.out.println(this.inv);
+	}
+	public void displayInventoryWeight() {
+		System.out.println(this.invWeight);
+	}
+	
 	// player location 
-	String location;
-	public void getLocation(String loc) {
-		if(loc.equalsIgnoreCase("Chamber")) {
-			location = "Chamber";
-		}
-		else if(loc.equalsIgnoreCase("Lab")) {
-			location = "Lab";
+	String location = "Room01";
+	
+	public void displayLocation() {
+		System.out.println(location);
+	}
+	
+	public void move(String whereTo) {
+		switch(whereTo) {
+			case "Room01": location = "Room02";
+				break;
+				
+			case "Room02": location = "Room02";
+				break;
 		}
 	}
 }
