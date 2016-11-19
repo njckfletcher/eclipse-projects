@@ -44,7 +44,9 @@ public class Parser {
 			}
 		}
 		
-		System.out.println(fixParts);
+		
+		
+		//System.out.println(fixParts);
 		
 	}
 }

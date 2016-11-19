@@ -25,8 +25,11 @@ public class Main {
 		hero.displayLocation();
 		*/
 		
-		System.out.print("Input something random: ");
+		System.out.print("What would you like to do: ");
 		parse.parseCommand();
 		
+		if(parse.fixParts.contains("location")) {
+			hero.displayLocation();
+		}
 	}
 }
