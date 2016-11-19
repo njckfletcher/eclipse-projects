@@ -9,7 +9,7 @@ public class Main {
 		// Instantiating Game Objects
 		Player hero = new Player();
 		
-		// Tests
+		/*
 		hero.displayInventory();
 		hero.displayInventoryWeight();
 		hero.displayLocation();
@@ -23,10 +23,10 @@ public class Main {
 		hero.displayInventory();
 		hero.displayInventoryWeight();
 		hero.displayLocation();
+		*/
 		
 		System.out.print("Input something random: ");
-		command = parse.parseCommand();
+		parse.parseCommand();
 		
-		System.out.println(command);
 	}
 }
