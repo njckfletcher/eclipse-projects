@@ -44,9 +44,12 @@ public class Parser {
 			}
 		}
 		
+		String[] finalText = new String[fixParts.size()];
+		finalText = fixParts.toArray(finalText);
 		
-		
-		//System.out.println(fixParts);
+		for(String s : finalText) {
+			System.out.print(s + " ");
+		}
 		
 	}
 }

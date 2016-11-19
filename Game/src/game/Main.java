@@ -4,7 +4,8 @@ public class Main {
 	public static void main(String[] args) {
 		// System Objects
 		Parser parse = new Parser();
-		String command;		
+		String command;
+		boolean running = true;
 		
 		// Instantiating Game Objects
 		Player hero = new Player();
@@ -25,11 +26,11 @@ public class Main {
 		hero.displayLocation();
 		*/
 		
-		System.out.print("What would you like to do: ");
+		System.out.print("Input: ");
 		parse.parseCommand();
 		
-		if(parse.fixParts.contains("location")) {
-			hero.displayLocation();
-		}
+		//if(parse.fixParts.contains("location")) {
+		//	hero.displayLocation();
+		//}
 	}
 }
