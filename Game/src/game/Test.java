@@ -14,11 +14,30 @@ public class Test {
 			System.out.print("Input: ");
 			parse.parseCommand();
 			
+			if(parse.exeActions.length == 0) {
+				System.out.println("Invalid command.");
+			}
 			
 			for(int o = 0; o < parse.exeActions.length; o++) {
 				
+				
 				int actionLoc = Arrays.asList(parse.finalText).indexOf(parse.exeActions[o]);
+				int actionArg = actionLoc + 1;
+				
+				boolean argPresent;
+				
+				//System.out.println("Final Text Length: " + parse.finalText.length);
+				
+				if(!(parse.finalText.length <= actionArg)) {
+					argPresent = true;
+				}
+				else {
+					argPresent = false;
+				}
+				
+				//System.out.println("Arg Present: " + argPresent);
 				//System.out.println("Action appears at: " + actionLoc);
+				//System.out.println("Word after action appears at: " + actionArg);
 				
 				if(parse.exeActions[o].equals("location")) {
 					hero.displayLocation();
@@ -33,16 +52,23 @@ public class Test {
 					hero.displayHealth();
 				}
 				else if(parse.exeActions[o].equals("move") 
-					 || parse.exeActions[o].equals("goto")) {
-					if(parse.finalText[actionLoc + 1].equals("room01")) {
-						hero.move("Room01");
+					 || parse.exeActions[o].equals("goto")
+					 || parse.exeActions[o].equals("go")) {
+					if(argPresent) {
+						if(parse.finalText[actionLoc + 1].equals("room01")) {
+							hero.move("Room01");
+						}
+						else if(parse.finalText[actionLoc + 1].equals("room02")) {
+							hero.move("Room02");
+						}
+						else {
+							System.out.println(parse.exeActions[o] + " where?");
+						}
 					}
-					if(parse.finalText[actionLoc + 1].equals("room02")) {
-						hero.move("Room02");
+					else {
+						System.out.println(parse.exeActions[o] + " where?");
 					}
-				}
-				else {
-					System.out.println("Invalid command.");
+					
 				}
 			}
 			parse.fixParts.clear();

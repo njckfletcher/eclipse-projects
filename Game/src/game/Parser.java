@@ -13,7 +13,13 @@ public class Parser {
 	String[] finalText;
 	boolean multiCommand = false;
 	int numActions;
-	String actions[] = {"health", "inventory", "location", "weight", "goto", "move"};
+	String actions[] = {"health", 
+						"inventory", 
+						"location", 
+						"weight", 
+						"goto", 
+						"move",
+						"go"};
 	List<String> activeActions = new ArrayList<String>();
 	String[] exeActions;
 	
@@ -31,6 +37,7 @@ public class Parser {
 		    	case "the": 
 		    	case "an": 
 		    	case "a":
+		    	case "to":
 		    		rawParts[i] = null;
 		    		break;
 		    }
