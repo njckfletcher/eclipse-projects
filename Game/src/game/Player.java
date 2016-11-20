@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Player {
 	// player name
-	String name;
+	String name = "player";
 	public void getName(String n) {
 		this.name = n;
 	}
@@ -14,7 +14,7 @@ public class Player {
 	int health = 100;
 	
 	public void displayHealth() {
-		System.out.println(this.health);
+		System.out.println("Health: " + this.health + "%");
 	}
 	
 	// player inventory
@@ -23,25 +23,39 @@ public class Player {
 	int invMaxWeight = 15;
 	
 	public void displayInventory() {
-		System.out.println(this.inv);
+		System.out.println("Inventory: " + this.inv);
 	}
 	public void displayWeight() {
-		System.out.println(this.invWeight);
+		System.out.println("Weight: " + this.invWeight);
 	}
 	
 	// player location 
 	String location = "Room01";
 	
 	public void displayLocation() {
-		System.out.println(location);
+		System.out.println("Location: " + location);
 	}
 	
 	public void move(String whereTo) {
 		switch(whereTo) {
-			case "Room01": location = "Room01";
+			case "Room01": 
+				if(location == "Room01") {
+					System.out.println("You are already in Room01");
+				}
+				else {
+					location = "Room01";
+					System.out.println(name + " moved to Room01");
+				}
 				break;
 				
-			case "Room02": location = "Room02";
+			case "Room02": 
+				if(location == "Room02") {
+					System.out.println("You are already in Room02");
+				}
+				else {
+					location = "Room02";
+					System.out.println(name + " moved to Room02");
+				}
 				break;
 		}
 	}

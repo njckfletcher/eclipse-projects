@@ -10,43 +10,31 @@ public class Main {
 		// Instantiating Game Objects
 		Player hero = new Player();
 		
-		/*
-		hero.displayInventory();
-		hero.displayInventoryWeight();
-		hero.displayLocation();
-		
-		System.out.println();
-		
-		hero.inv.add("Phone");
-		hero.invWeight += 1;
-		hero.move("Room02");
-		
-		hero.displayInventory();
-		hero.displayInventoryWeight();
-		hero.displayLocation();
-		*/
+		COMMAND:
 		while(commandInProgress) {
+			System.out.println("------------------------------------------");
 			System.out.print("Input: ");
 			parse.parseCommand();
+			
 			
 			if(parse.fixParts.contains("location")) {
 				hero.displayLocation();
 			}
 			
-			if(parse.fixParts.contains("inventory")) {
+			else if(parse.fixParts.contains("inventory")) {
 				hero.displayInventory();
 			}
 			
-			if(parse.fixParts.contains("weight")) {
+			else if(parse.fixParts.contains("weight")) {
 				hero.displayWeight();
 			}
 			
-			if(parse.fixParts.contains("health")) {
+			else if(parse.fixParts.contains("health")) {
 				hero.displayHealth();
 			}
 			
-			if(parse.fixParts.contains("move") 
-			|| parse.fixParts.contains("goto")) {
+			else if(parse.fixParts.contains("move") 
+				 || parse.fixParts.contains("goto")) {
 				if(parse.fixParts.contains("room01")) {
 					hero.move("Room01");
 				}
@@ -55,9 +43,12 @@ public class Main {
 					hero.move("Room02");
 				}
 			}
+			else {
+				System.out.println("Invalid command.");
+			}
 			
 			parse.fixParts.clear();
-			System.out.println();
+			//System.out.println();
 			
 			
 		}

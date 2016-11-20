@@ -10,6 +10,7 @@ public class Parser {
 	String rawCommand;
 	String[] rawParts;
 	List<String> fixParts = new ArrayList<String>();
+	boolean multiCommand = false;
 	String actions[] = {"health", "inventory", "location"};
 	
 	// Parse Command Method
@@ -20,13 +21,15 @@ public class Parser {
 		// Split input into parts[]
 		rawParts = rawCommand.split(" ");
 		
-		// Filter out words
+		// Filter words
 		for(int i = 0; i < rawParts.length; i++) {
 		    switch(rawParts[i]) {
 		    	case "the": 
 		    	case "an": 
 		    	case "a":
 		    		rawParts[i] = null;
+		    	case "and":
+		    		multiCommand = true;
 		    		break;
 		    }
 		}
