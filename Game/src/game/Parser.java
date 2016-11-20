@@ -1,7 +1,6 @@
 package game;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -48,14 +47,17 @@ public class Parser {
 		String[] finalText = new String[fixParts.size()];
 		finalText = fixParts.toArray(finalText);
 		
+		/*
 		// Output text
 		for(String s : finalText) {
 			System.out.print(s + " ");
 		}
 		
+		
 		System.out.println();
 		
 		// Output word count
 		System.out.println("Word count: " + finalText.length);
+		*/
 	}
 }

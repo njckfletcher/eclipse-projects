@@ -13,6 +13,10 @@ public class Player {
 	// player health
 	int health = 100;
 	
+	public void displayHealth() {
+		System.out.println(this.health);
+	}
+	
 	// player inventory
 	List<String> inv = new ArrayList<String>();
 	int invWeight = 0;
@@ -21,7 +25,7 @@ public class Player {
 	public void displayInventory() {
 		System.out.println(this.inv);
 	}
-	public void displayInventoryWeight() {
+	public void displayWeight() {
 		System.out.println(this.invWeight);
 	}
 	

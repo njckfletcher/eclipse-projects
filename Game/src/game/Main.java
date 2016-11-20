@@ -5,7 +5,7 @@ public class Main {
 		// System Objects
 		Parser parse = new Parser();
 		String command;
-		boolean running = true;
+		boolean commandInProgress = true;
 		
 		// Instantiating Game Objects
 		Player hero = new Player();
@@ -25,11 +25,40 @@ public class Main {
 		hero.displayInventoryWeight();
 		hero.displayLocation();
 		*/
-		while(running) {
+		while(commandInProgress) {
 			System.out.print("Input: ");
 			parse.parseCommand();
+			
+			if(parse.fixParts.contains("location")) {
+				hero.displayLocation();
+			}
+			
+			if(parse.fixParts.contains("inventory") && !parse.fixParts.contains("weight")) {
+				hero.displayInventory();
+			}
+			
+			if(parse.fixParts.contains("weight") || (parse.fixParts.contains("inventory") && parse.fixParts.contains("weight"))) {
+				hero.displayWeight();
+			}
+			
+			if(parse.fixParts.contains("health")) {
+				hero.displayHealth();
+			}
+			
+			if(parse.fixParts.contains("move")) {
+				if(parse.fixParts.contains("room01")) {
+					hero.move("Room01");
+				}
+				
+				if(parse.fixParts.contains("room02")) {
+					hero.move("Room02");
+				}
+			}
+			
 			parse.fixParts.clear();
 			System.out.println();
+			
+			
 		}
 		
 		
