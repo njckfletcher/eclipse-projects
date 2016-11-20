@@ -48,6 +48,7 @@ public class Main {
 			}
 			
 			parse.fixParts.clear();
+			parse.numActions = 0;
 			//System.out.println();
 			
 			
