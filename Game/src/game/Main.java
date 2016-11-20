@@ -25,9 +25,13 @@ public class Main {
 		hero.displayInventoryWeight();
 		hero.displayLocation();
 		*/
+		while(running) {
+			System.out.print("Input: ");
+			parse.parseCommand();
+			parse.fixParts.clear();
+			System.out.println();
+		}
 		
-		System.out.print("Input: ");
-		parse.parseCommand();
 		
 		//if(parse.fixParts.contains("location")) {
 		//	hero.displayLocation();

@@ -44,12 +44,18 @@ public class Parser {
 			}
 		}
 		
+		// Convert list to array
 		String[] finalText = new String[fixParts.size()];
 		finalText = fixParts.toArray(finalText);
 		
+		// Output text
 		for(String s : finalText) {
 			System.out.print(s + " ");
 		}
 		
+		System.out.println();
+		
+		// Output word count
+		System.out.println("Word count: " + finalText.length);
 	}
 }
