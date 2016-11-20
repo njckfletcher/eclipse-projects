@@ -23,9 +23,11 @@ public class Parser {
 		// Filter out words
 		for(int i = 0; i < rawParts.length; i++) {
 		    switch(rawParts[i]) {
-		    case "the": case "an": case "a":
-		    	rawParts[i] = null;
-		    	break;
+		    	case "the": 
+		    	case "an": 
+		    	case "a":
+		    		rawParts[i] = null;
+		    		break;
 		    }
 		}
 		

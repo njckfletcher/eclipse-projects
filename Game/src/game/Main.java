@@ -33,11 +33,11 @@ public class Main {
 				hero.displayLocation();
 			}
 			
-			if(parse.fixParts.contains("inventory") && !parse.fixParts.contains("weight")) {
+			if(parse.fixParts.contains("inventory")) {
 				hero.displayInventory();
 			}
 			
-			if(parse.fixParts.contains("weight") || (parse.fixParts.contains("inventory") && parse.fixParts.contains("weight"))) {
+			if(parse.fixParts.contains("weight")) {
 				hero.displayWeight();
 			}
 			
@@ -45,7 +45,8 @@ public class Main {
 				hero.displayHealth();
 			}
 			
-			if(parse.fixParts.contains("move")) {
+			if(parse.fixParts.contains("move") 
+			|| parse.fixParts.contains("goto")) {
 				if(parse.fixParts.contains("room01")) {
 					hero.move("Room01");
 				}
@@ -60,10 +61,5 @@ public class Main {
 			
 			
 		}
-		
-		
-		//if(parse.fixParts.contains("location")) {
-		//	hero.displayLocation();
-		//}
 	}
 }
