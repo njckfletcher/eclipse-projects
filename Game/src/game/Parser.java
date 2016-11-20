@@ -38,6 +38,8 @@ public class Parser {
 		    	case "an": 
 		    	case "a":
 		    	case "to":
+		    	case "current":
+		    	case "my":
 		    		rawParts[i] = null;
 		    		break;
 		    }
