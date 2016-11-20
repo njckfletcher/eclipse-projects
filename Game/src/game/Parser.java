@@ -10,9 +10,12 @@ public class Parser {
 	String rawCommand;
 	String[] rawParts;
 	List<String> fixParts = new ArrayList<String>();
+	String[] finalText;
 	boolean multiCommand = false;
 	int numActions;
 	String actions[] = {"health", "inventory", "location", "weight", "goto", "move"};
+	List<String> activeActions = new ArrayList<String>();
+	String[] exeActions;
 	
 	// Parse Command Method
 	public void parseCommand() {
@@ -29,8 +32,6 @@ public class Parser {
 		    	case "an": 
 		    	case "a":
 		    		rawParts[i] = null;
-		    	case "and":
-		    		multiCommand = true;
 		    		break;
 		    }
 		}
@@ -50,18 +51,23 @@ public class Parser {
 		}
 		
 		// Convert list to array
-		String[] finalText = new String[fixParts.size()];
+		finalText = new String[fixParts.size()];
 		finalText = fixParts.toArray(finalText);
 		
 		for(int i = 0; i < finalText.length; i++) {
 			for(int o = 0; o < actions.length; o++) {
 				if(finalText[i].equals(actions[o])) {
 					numActions++;
+					activeActions.add(actions[o]);
 				}
 			}
 		}
 		
+		// Convert list of actions to array of actions
+		exeActions = new String[activeActions.size()];
+		exeActions = activeActions.toArray(exeActions);
 		
+		/*
 		// Output text
 		for(String s : finalText) {
 			System.out.print(s + " ");
@@ -73,5 +79,6 @@ public class Parser {
 		// Output word count
 		System.out.println("Word count: " + finalText.length);
 		System.out.println("Number of Actions: " + numActions);
+		*/
 	}
 }

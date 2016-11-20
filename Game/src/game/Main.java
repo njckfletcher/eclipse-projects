@@ -16,7 +16,6 @@ public class Main {
 			System.out.print("Input: ");
 			parse.parseCommand();
 			
-			
 			if(parse.fixParts.contains("location")) {
 				hero.displayLocation();
 			}
