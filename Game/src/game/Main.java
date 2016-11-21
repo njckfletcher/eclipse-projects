@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) {
 		// System Objects
 		Parser parse = new Parser();
 		boolean commandInProgress = true;
