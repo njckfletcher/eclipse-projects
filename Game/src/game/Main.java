@@ -1,6 +1,5 @@
 package game;
 
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -15,6 +14,8 @@ public class Main {
 		while(running) {
 			// Instantiating Game Objects
 			Player hero = new Player();
+			Room01 room01 = new Room01();
+			room01.inv.add("phone");
 			
 			// GAME START:
 			System.out.println("Welcome to the game!");
@@ -102,6 +103,38 @@ public class Main {
 							System.out.println(parse.exeActions[o] + " where?");
 						}
 						
+					}
+					else if(parse.exeActions[o].equals("look")) {
+						if(argPresent) {
+							if(parse.finalText[actionLoc + 1].equals("around")) {
+								System.out.println(hero.name + " looked around.");
+							}
+							else {
+								System.out.println(parse.exeActions[o] + " where?");
+							}
+						}
+						else {
+							System.out.println(parse.exeActions[o] + " where?");
+						}
+					}
+					else if(parse.exeActions[o].equals("take")) {
+						if(argPresent) {
+							if(hero.location.equals("Room01")) {
+								if(parse.finalText[actionLoc + 1].equals("phone")) {
+									// System.out.println("Room01 inv before: " + room01.inv);
+									room01.inv.remove("phone");
+									hero.inv.add("phone");
+									System.out.println(">>> " + hero.name + " took the phone.");
+									// System.out.println("Room01 inv after: " + room01.inv);
+								}
+								else {
+									System.out.println(parse.exeActions[o] + " what?");
+								}
+							}
+						}
+						else {
+							System.out.println(parse.exeActions[o] + " what?");
+						}
 					}
 				}
 				parse.clearParser();

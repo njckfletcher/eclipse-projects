@@ -20,7 +20,9 @@ public class Parser {
 						"weight", 
 						"goto", 
 						"move",
-						"go"};
+						"go",
+						"look",
+						"take"};
 	List<String> activeActions = new ArrayList<String>();
 	String[] exeActions;
 	
