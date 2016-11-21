@@ -1,10 +1,11 @@
 package game;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Random;
 
 public class Main {
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		// System Objects
 		Parser parse = new Parser();
 		boolean commandInProgress = true;
@@ -33,7 +34,7 @@ public class Main {
 			System.out.println("The following filler words are removed from the input:");
 			System.out.println("the, an, a, and, my, current");
 			System.out.println("So, 'my health', 'current health', and 'health' will all"
-					+ "\nreturn the players health.");
+					+ "\nreturn the player's health.");
 			System.out.println("------------------------------------------");
 			System.out.print("Please enter your name: ");
 			hero.getName(parse.input.nextLine());
