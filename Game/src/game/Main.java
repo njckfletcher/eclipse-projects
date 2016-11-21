@@ -9,16 +9,35 @@ public class Main {
 		Parser parse = new Parser();
 		boolean commandInProgress = true;
 		boolean running = true;
-		String systemPrompts[] = {"What do you want to do?: ", "What now?: ", "What would you like to do next?: ", "Enter a command: "};
+		String systemPrompts[] = {"What do you want to do?: ", "What now?: ", "What would you like to do next?: ", "Enter your command(s): "};
 		
 		while(running) {
 			// Instantiating Game Objects
 			Player hero = new Player();
 			
 			// GAME START:
-			System.out.println("Welcome to the game!\n");
+			System.out.println("Welcome to the game!");
+			System.out.println();
+			System.out.println("Current working commands:");
+			System.out.println("health"
+							 + "\nlocation"
+							 + "\ninventory"
+							 + "\nweight"
+							 + "\ngo, goto, move");
+			System.out.println();
+			System.out.println("Multiple commands can be passed through at the same time."
+					+ "\nTry 'health weight location inventory', in any order.");
+			System.out.println();
+			System.out.println("Currently, the only locations available are Room01 and Room02.");
+			System.out.println();
+			System.out.println("The following filler words are removed from the input:");
+			System.out.println("the, an, a, and, my, current");
+			System.out.println("So, 'my health', 'current health', and 'health' will all"
+					+ "\nreturn the players health.");
+			System.out.println("------------------------------------------");
 			System.out.print("Please enter your name: ");
 			hero.getName(parse.input.nextLine());
+			System.out.println("------------------------------------------");
 			
 			COMMAND:
 			while(commandInProgress) {
