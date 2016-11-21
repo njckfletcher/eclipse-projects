@@ -40,21 +40,21 @@ public class Player {
 		switch(whereTo) {
 			case "Room01": 
 				if(location == "Room01") {
-					System.out.println("You are already in Room01");
+					System.out.println(">>> You are already in Room01");
 				}
 				else {
 					location = "Room01";
-					System.out.println(name + " moved to Room01");
+					System.out.println(">>> " + name + " moved to Room01");
 				}
 				break;
 				
-			case "Room02": 
+			case "Room02":
 				if(location == "Room02") {
-					System.out.println("You are already in Room02");
+					System.out.println(">>> You are already in Room02");
 				}
 				else {
 					location = "Room02";
-					System.out.println(name + " moved to Room02");
+					System.out.println(">>> " + name + " moved to Room02");
 				}
 				break;
 		}

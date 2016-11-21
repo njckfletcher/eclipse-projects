@@ -10,9 +10,9 @@ public class Test {
 		Player hero = new Player();
 		
 		while(commandInProgress) {
-			System.out.println("------------------------------------------");
 			System.out.print("Input: ");
 			parse.parseCommand();
+			System.out.println("------------------------------------------");
 			
 			if(parse.exeActions.length == 0) {
 				System.out.println("Invalid command.");
@@ -26,8 +26,6 @@ public class Test {
 				
 				boolean argPresent;
 				
-				//System.out.println("Final Text Length: " + parse.finalText.length);
-				
 				if(!(parse.finalText.length <= actionArg)) {
 					argPresent = true;
 				}
@@ -35,9 +33,11 @@ public class Test {
 					argPresent = false;
 				}
 				
-				//System.out.println("Arg Present: " + argPresent);
-				//System.out.println("Action appears at: " + actionLoc);
-				//System.out.println("Word after action appears at: " + actionArg);
+				/*
+				System.out.println("Arg Present: " + argPresent);
+				System.out.println("Action appears at: " + actionLoc);
+				System.out.println("Arg after action (if present) would appear at: " + actionArg);
+				*/
 				
 				if(parse.exeActions[o].equals("location")) {
 					hero.displayLocation();
@@ -74,10 +74,8 @@ public class Test {
 			parse.fixParts.clear();
 			parse.activeActions.clear();
 			parse.numActions = 0;
-			
-			
-			//System.out.println();
-			
+			parse.goCount = 0;
+			System.out.println("------------------------------------------");
 			
 		}
 	}

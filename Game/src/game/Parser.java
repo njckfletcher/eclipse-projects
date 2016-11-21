@@ -13,6 +13,7 @@ public class Parser {
 	String[] finalText;
 	boolean multiCommand = false;
 	int numActions;
+	int goCount = 0;
 	String actions[] = {"health", 
 						"inventory", 
 						"location", 
@@ -40,6 +41,7 @@ public class Parser {
 		    	case "to":
 		    	case "current":
 		    	case "my":
+		    	case "and":
 		    		rawParts[i] = null;
 		    		break;
 		    }
@@ -63,6 +65,7 @@ public class Parser {
 		finalText = new String[fixParts.size()];
 		finalText = fixParts.toArray(finalText);
 		
+		// Determines active actions
 		for(int i = 0; i < finalText.length; i++) {
 			for(int o = 0; o < actions.length; o++) {
 				if(finalText[i].equals(actions[o])) {
@@ -72,22 +75,44 @@ public class Parser {
 			}
 		}
 		
+		// Go count
+		for(String s : finalText) {
+			if(s.equals("go") || s.equals("move") || s.equals("goto")) {
+				goCount++;
+			}
+		}
+		
 		// Convert list of actions to array of actions
 		exeActions = new String[activeActions.size()];
 		exeActions = activeActions.toArray(exeActions);
 		
 		/*
-		// Output text
+		// Output final text
+		System.out.println("------------------------------------------");
+		System.out.println("SYSTEM DATA:");
+		System.out.print("Filtered text: ");
 		for(String s : finalText) {
 			System.out.print(s + " ");
 		}
 		
-		
 		System.out.println();
 		
-		// Output word count
+		// Output stats
 		System.out.println("Word count: " + finalText.length);
 		System.out.println("Number of Actions: " + numActions);
+		System.out.print("Active actions: ");
+		for(String s : exeActions) {
+			System.out.print(s + " ");
+		}
+		System.out.println();
+		System.out.println("Go Count: " + goCount);
 		*/
+	}
+	
+	public void clearParser() {
+		fixParts.clear();
+		activeActions.clear();
+		numActions = 0;
+		goCount = 0;
 	}
 }
