@@ -26,6 +26,7 @@ public class Main {
 							 + "\nname"
 							 + "\ninventory"
 							 + "\nweight"
+							 + "\nlook around"
 							 + "\ngo, goto, move"
 							 + "\ntake, pickup, grab");
 			System.out.println();

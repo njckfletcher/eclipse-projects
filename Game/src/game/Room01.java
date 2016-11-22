@@ -5,5 +5,4 @@ import java.util.List;
 
 public class Room01 {
 	List<String> inv = new ArrayList<String>();
-	
 }
