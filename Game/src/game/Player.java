@@ -5,9 +5,14 @@ import java.util.List;
 
 public class Player {
 	// player name
-	String name = "player";
+	String name;
+	int maxName = 20;
 	public void getName(String n) {
 		this.name = n;
+	}
+	
+	public void displayName() {
+		System.out.println("Character: " + this.name);
 	}
 	
 	// player health

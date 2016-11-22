@@ -23,22 +23,33 @@ public class Main {
 			System.out.println("Current working commands:");
 			System.out.println("health"
 							 + "\nlocation"
+							 + "\nname"
 							 + "\ninventory"
 							 + "\nweight"
-							 + "\ngo, goto, move");
+							 + "\ngo, goto, move"
+							 + "\ntake, pickup, grab");
 			System.out.println();
 			System.out.println("Multiple commands can be passed through at the same time."
 					+ "\nTry 'health weight location inventory', in any order.");
 			System.out.println();
-			System.out.println("Currently, the only locations available are Room01 and Room02.");
+			System.out.println("Currently locations: Room01, Room02.");
+			System.out.println("Room01 contains a phone...  Try taking it?");
 			System.out.println();
 			System.out.println("The following filler words are removed from the input:");
 			System.out.println("the, an, a, and, my, current");
 			System.out.println("So, 'my health', 'current health', and 'health' will all"
 					+ "\nreturn the player's health.");
-			System.out.println("------------------------------------------");
-			System.out.print("Please enter your name: ");
-			hero.getName(parse.input.nextLine());
+			
+			while(hero.name == null) {
+				System.out.println("------------------------------------------");
+				System.out.print("Please enter your name: ");
+				hero.getName(parse.input.nextLine());
+				if(hero.name.length() > hero.maxName) {
+					System.out.println("Too long.  Max characters: " + hero.maxName);
+					hero.getName(null);
+				}
+			}
+			
 			System.out.println("------------------------------------------");
 			
 			COMMAND:
@@ -56,15 +67,27 @@ public class Main {
 				for(int o = 0; o < parse.exeActions.length; o++) {
 										
 					int actionLoc = Arrays.asList(parse.finalText).indexOf(parse.exeActions[o]);
+					
 					int actionArg = actionLoc + 1;
 					
 					boolean argPresent;
+					boolean dirPresent = false;
 					
 					if(!(parse.finalText.length <= actionArg)) {
 						argPresent = true;
 					}
 					else {
 						argPresent = false;
+					}
+					
+					if(argPresent) {
+						if(parse.exeActions[o].equals("pick") && parse.finalText[actionLoc + 1].equals("up")) {
+							actionArg += 1;
+							dirPresent = true;
+							if(parse.finalText.length <= actionArg) {
+								argPresent = false;
+							}
+						}
 					}
 					
 					/*
@@ -75,6 +98,9 @@ public class Main {
 					
 					if(parse.exeActions[o].equals("location")) {
 						hero.displayLocation();
+					}
+					else if(parse.exeActions[o].equals("name")) {
+						hero.displayName();
 					}
 					else if(parse.exeActions[o].equals("inventory")) {
 						hero.displayInventory();
@@ -117,23 +143,42 @@ public class Main {
 							System.out.println(parse.exeActions[o] + " where?");
 						}
 					}
-					else if(parse.exeActions[o].equals("take")) {
+					else if(parse.exeActions[o].equals("take")
+						 || parse.exeActions[o].equals("pickup")
+						 || parse.exeActions[o].equals("pick")
+						 || parse.exeActions[o].equals("grab")) {
 						if(argPresent) {
 							if(hero.location.equals("Room01")) {
-								if(parse.finalText[actionLoc + 1].equals("phone")) {
-									// System.out.println("Room01 inv before: " + room01.inv);
-									room01.inv.remove("phone");
-									hero.inv.add("phone");
-									System.out.println(">>> " + hero.name + " took the phone.");
-									// System.out.println("Room01 inv after: " + room01.inv);
+								if(parse.finalText[actionArg].equals("phone")) {
+									if(room01.inv.contains("phone")) {
+										room01.inv.remove("phone");
+										hero.inv.add("phone");
+										System.out.println(">>> " + hero.name + " took the phone");
+									}
+									else {
+										System.out.println("The phone has already been taken");
+									}
 								}
 								else {
-									System.out.println(parse.exeActions[o] + " what?");
+									if(dirPresent) {
+										System.out.println(parse.exeActions[o] + " " + parse.finalText[actionLoc + 1] + " what?");
+									}
+									else {
+										System.out.println(parse.exeActions[o] + " what?");
+									}
 								}
+							}
+							else {
+								System.out.println(">>> There is no phone here");
 							}
 						}
 						else {
-							System.out.println(parse.exeActions[o] + " what?");
+							if(dirPresent) {
+								System.out.println(parse.exeActions[o] + " " + parse.finalText[actionLoc + 1] + " what?");
+							}
+							else {
+								System.out.println(parse.exeActions[o] + " what?");
+							}
 						}
 					}
 				}

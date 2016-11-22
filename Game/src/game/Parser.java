@@ -16,13 +16,17 @@ public class Parser {
 	int goCount = 0;
 	String actions[] = {"health", 
 						"inventory", 
-						"location", 
+						"location",
+						"name", 
 						"weight", 
 						"goto", 
 						"move",
 						"go",
 						"look",
-						"take"};
+						"take",
+						"pickup",
+						"pick",
+						"grab"};
 	List<String> activeActions = new ArrayList<String>();
 	String[] exeActions;
 	
@@ -44,6 +48,7 @@ public class Parser {
 		    	case "current":
 		    	case "my":
 		    	case "and":
+		    	case "display":
 		    		rawParts[i] = null;
 		    		break;
 		    }
